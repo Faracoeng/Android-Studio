@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class SegundaActivity extends AppCompatActivity {
 
@@ -13,6 +14,15 @@ public class SegundaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda);
+
+        Intent intent = getIntent();
+
+        Bundle extras = intent.getExtras();
+        if(extras != null){
+            int contador = extras.getInt("contador");
+            TextView view = findViewById(R.id.textView2);
+            view.setText(""+contador);
+        }
     }
 
     public void botao01(View view) {

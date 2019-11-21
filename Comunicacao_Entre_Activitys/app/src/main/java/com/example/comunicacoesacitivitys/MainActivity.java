@@ -16,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void botao02(View view) {
         Intent menssagemIntent = new Intent(this,SegundaActivity.class);
+        //mandar varias informações em  HashMap
+        Bundle extras = new Bundle();
+        extras.putInt("contador",1);
+        menssagemIntent.putExtras(extras);
+
         startActivity(menssagemIntent);
     }
 
