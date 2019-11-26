@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:text="0"
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/b21"
         app:layout_constraintEnd_toEndOf="parent"
