@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import java.util.Random;
+
+import static java.lang.Thread.sleep;
 
 public class GeniusActivity extends AppCompatActivity {
 
@@ -36,10 +38,10 @@ public class GeniusActivity extends AppCompatActivity {
             this.sequenciaAleatoria = new int[this.nivelDeDifiuldade];
             this.gerarSequenciaAleatoria(this.nivelDeDifiuldade);
 // ----------------------------acender botoes indicando inicio do jogo------------------------------
-//            this.trocaImagem(R.id.vermelhor_apagado, R.drawable.ic_vermelhorapagado, R.drawable.ic_vermelhoraceso);
-//            this.trocaImagem(R.id.azul_apagado, R.drawable.ic_azulapagado, R.drawable.ic_azulaceso);
-//            this.trocaImagem(R.id.verde_apagado, R.drawable.ic_verdeapagado, R.drawable.ic_verdeaceso);
-//            this.trocaImagem(R.id.amarelo_apagado, R.drawable.ic_amareloapagado, R.drawable.ic_amareloaceso);
+            this.trocaImagem(R.id.vermelho_apagado, R.drawable.vermelho_apagado, R.drawable.vermelho_aceso);
+            this.trocaImagem(R.id.azul_apagado, R.drawable.azul_apagado, R.drawable.azul_aceso);
+            this.trocaImagem(R.id.verde_apagado, R.drawable.verde_apagado, R.drawable.verde_aceso);
+            this.trocaImagem(R.id.amarelo_apagado, R.drawable.amarelo_apagado, R.drawable.amarelo_aceso);
         }
     }
 //-------------------Gerar sequencia aleatoria em vetor---------------------------------------------
@@ -51,6 +53,25 @@ public class GeniusActivity extends AppCompatActivity {
             // corretamente
         }
     }
+
+    // ----------------- piscar luzes do jogo-------------------------------------------------------
+    private void trocaImagem(int corBotao, final int apagada, final int acesa) {
+        final ImageView imageView = findViewById(corBotao);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    imageView.setImageResource(acesa);
+                    sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                imageView.setImageResource(apagada);
+            }
+        }).start();
+    }
+// ---------------------------------------------------------------------------------------------
 
 
     public void iniciarPartida(View view) {

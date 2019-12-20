@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/amarelo_apagado"
         android:layout_width="209dp"
         android:layout_height="200dp"
         android:onClick="corVermelha"
@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/amarelo_apagado" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/azul_apagado"
         android:layout_width="208dp"
         android:layout_height="192dp"
         android:onClick="corAzul"
@@ -49,26 +49,26 @@
         app:srcCompat="@drawable/azul_apagado" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/vermelho_apagado"
         android:layout_width="199dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@+id/botao_IniciarRodada"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/amarelo_apagado"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/vermelho_apagado" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/verde_apagado"
         android:layout_width="203dp"
         android:layout_height="191dp"
         android:onClick="corVerde"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/azul_apagado"
         app:layout_constraintTop_toBottomOf="@+id/botao_IniciarRodada"
         app:layout_constraintVertical_bias="0.007"
         app:srcCompat="@drawable/verde_apagado" />
