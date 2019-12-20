@@ -75,14 +75,23 @@ public class GeniusActivity extends AppCompatActivity {
 
 
     public void iniciarPartida(View view) {
+
     }
 
     public void corVermelha(View view) {
+        trocaImagem(view.getId(),R.drawable.vermelho_apagado,R.drawable.vermelho_aceso);
+
     }
 
     public void corAzul(View view) {
+        trocaImagem(view.getId(),R.drawable.azul_apagado,R.drawable.azul_aceso);
     }
 
     public void corVerde(View view) {
+        trocaImagem(view.getId(),R.drawable.verde_apagado,R.drawable.verde_aceso);
+    }
+
+    public void corAmarela(View view) {
+        trocaImagem(view.getId(),R.drawable.amarelo_apagado,R.drawable.amarelo_aceso);
     }
 }
