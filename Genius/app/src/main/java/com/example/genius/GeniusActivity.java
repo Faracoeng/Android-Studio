@@ -94,4 +94,5 @@ public class GeniusActivity extends AppCompatActivity {
     public void corAmarela(View view) {
         trocaImagem(view.getId(),R.drawable.amarelo_apagado,R.drawable.amarelo_aceso);
     }
+
 }
