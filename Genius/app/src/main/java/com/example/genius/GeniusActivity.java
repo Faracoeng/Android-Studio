@@ -3,6 +3,7 @@ package com.example.genius;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -71,7 +72,26 @@ public class GeniusActivity extends AppCompatActivity {
             }
         }).start();
     }
-// ---------------------------------------------------------------------------------------------
+// --------------------tocar som--------------------------------------------------------------------
+    // definir musica por numero que define  a cor dos botoes
+    private void tocarSom(int qualSom) {
+        switch (qualSom) {
+            case 1:
+                    MediaPlayer mp = MediaPlayer.create(GeniusActivity.this, R);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+
+                        mp.release();
+                    }
+
+                    });
+                    mp.start();
+            case 2
+        }
+    }
+// -------------------------------------------------------------------------------------------------
 
 
     public void iniciarPartida(View view) {
@@ -80,19 +100,23 @@ public class GeniusActivity extends AppCompatActivity {
 
     public void corVermelha(View view) {
         trocaImagem(view.getId(),R.drawable.vermelho_apagado,R.drawable.vermelho_aceso);
+        tocarSom(1);
 
     }
 
     public void corAzul(View view) {
         trocaImagem(view.getId(),R.drawable.azul_apagado,R.drawable.azul_aceso);
+        tocarSom(2);
     }
 
     public void corVerde(View view) {
         trocaImagem(view.getId(),R.drawable.verde_apagado,R.drawable.verde_aceso);
+        tocarSom(3);
     }
 
     public void corAmarela(View view) {
         trocaImagem(view.getId(),R.drawable.amarelo_apagado,R.drawable.amarelo_aceso);
+        tocarSom(4);
     }
 
 }
