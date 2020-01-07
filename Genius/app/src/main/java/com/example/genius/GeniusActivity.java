@@ -75,9 +75,10 @@ public class GeniusActivity extends AppCompatActivity {
 // --------------------tocar som--------------------------------------------------------------------
     // definir musica por numero que define  a cor dos botoes
     private void tocarSom(int qualSom) {
+        MediaPlayer mp;
         switch (qualSom) {
             case 1:
-                    MediaPlayer mp = MediaPlayer.create(GeniusActivity.this, R);
+                    mp = MediaPlayer.create(GeniusActivity.this, R.raw.mi);
                     mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
                     @Override
@@ -88,7 +89,47 @@ public class GeniusActivity extends AppCompatActivity {
 
                     });
                     mp.start();
-            case 2
+                    break;
+            case 2:
+                     mp = MediaPlayer.create(GeniusActivity.this, R.raw.re);
+                     mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+
+                        mp.release();
+                        }
+
+                });
+                    mp.start();
+                    break;
+            case 3:
+                    mp = MediaPlayer.create(GeniusActivity.this, R.raw.si);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+
+                        mp.release();
+                        }
+
+                });
+                    mp.start();
+                    break;
+
+            case 4:
+                    mp = MediaPlayer.create(GeniusActivity.this, R.raw.sol);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+
+                        mp.release();
+                        }
+
+                });
+                    mp.start();
+                    break;
         }
     }
 // -------------------------------------------------------------------------------------------------
