@@ -100,7 +100,7 @@ public class GeniusActivity extends AppCompatActivity {
                         mp.release();
                         }
 
-                });
+                     });
                     mp.start();
                     break;
             case 3:
